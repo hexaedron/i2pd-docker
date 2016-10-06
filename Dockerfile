@@ -7,8 +7,13 @@ EXPOSE 4444 4447 7070 9439
 # Make our image up-to-date (optional)
 RUN apt-get update && apt-get upgrade
 
-# Install all the dependensies for i2pd
-RUN apt-get install -y wget libboost-date-time1.55.0 libboost-filesystem1.55.0 libboost-program-options1.55.0 libboost-system1.55.0 libminiupnpc10
+# Install the dependensies for i2pd
+RUN apt-get install -y  wget				\
+			libboost-date-time1.55.0 	\
+			libboost-filesystem1.55.0 	\
+			libboost-program-options1.55.0 	\
+			libboost-system1.55.0 		\
+			libminiupnpc10
 
 # Fetch the latest pakckage and install it
 RUN cd /tmp && wget https://github.com/PurpleI2P/i2pd/releases/download/2.9.0/i2pd_2.9.0-1jessie1_amd64.deb
