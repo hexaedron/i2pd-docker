@@ -1,5 +1,5 @@
 #!/bin/bash
 
 # Stop and clean
-docker stop i2pd
-docker rm i2pd
+docker stop hexaedron/i2pd
+docker rm hexaedron/i2pd

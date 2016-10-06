@@ -26,7 +26,7 @@ How to run
 Just use the `i2pd_docker_start.sh`/`i2pd_docker_stop.sh` scripts from this repository to start and stop the container.
 Or, if you prefer doing all the work manually, just type
 ```
-$ docker run --name=i2pd  -td -p 7070:7070 -p 4444:4444 -p 4447:4447 -p 9439:9439 i2pd
+$ docker run --name=i2pd  -td -p 7070:7070 -p 4444:4444 -p 4447:4447 -p 9439:9439 hexaedron/i2pd
 ```
 
 The console should now be accessible at port 7070 on your host and the http and socks proxies are at ports 4444 and 4447 respectively.
