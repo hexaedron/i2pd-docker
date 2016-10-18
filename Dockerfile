@@ -5,7 +5,7 @@ MAINTAINER Cube <kyb.6.granei@yandex.ru>
 EXPOSE 4444 4447 7070 9439
  
 # Make our image up-to-date (optional)
-RUN apt-get update && apt-get upgrade
+RUN apt-get update -y && apt-get upgrade -y
 
 # Install the dependensies for i2pd
 RUN apt-get install -y  wget				\
