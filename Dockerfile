@@ -16,9 +16,9 @@ RUN apt-get install -y  wget				\
 			libminiupnpc10
 
 # Fetch the latest pakckage and install it
-RUN cd /tmp && wget https://github.com/PurpleI2P/i2pd/releases/download/2.9.0/i2pd_2.9.0-1jessie1_amd64.deb
-RUN dpkg -i /tmp/i2pd_2.9.0-1jessie1_amd64.deb
-RUN rm /tmp/i2pd_2.9.0-1jessie1_amd64.deb
+RUN cd /tmp && wget https://github.com/PurpleI2P/i2pd/releases/download/2.10.0/i2pd_2.10.0-1jessie1_amd64.deb 
+RUN dpkg -i /tmp/i2pd_2.10.0-1jessie1_amd64.deb
+RUN rm /tmp/*.deb
 
 # Make the i2pd user availiable 
 RUN usermod -s /bin/bash i2pd 
