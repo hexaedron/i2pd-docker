@@ -5,20 +5,22 @@ MAINTAINER Cube <kyb.6.granei@yandex.ru>
 EXPOSE 4444 4447 7070 9439
  
 # Make our image up-to-date (optional)
-RUN apt-get update -y && apt-get upgrade -y
-
 # Install the dependensies for i2pd
-RUN apt-get install -y  wget				\
+RUN apt-get update -y  && \
+    apt-get upgrade -y && \
+    apt-get install -y  wget				\
 			libboost-date-time1.55.0 	\
 			libboost-filesystem1.55.0 	\
 			libboost-program-options1.55.0 	\
 			libboost-system1.55.0 		\
-			libminiupnpc10
+			libminiupnpc10               && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*  /tmp/*
 
 # Fetch the latest pakckage and install it
-RUN cd /tmp && wget https://github.com/PurpleI2P/i2pd/releases/download/2.10.0/i2pd_2.10.0-1jessie1_amd64.deb 
-RUN dpkg -i /tmp/i2pd_2.10.0-1jessie1_amd64.deb
-RUN rm /tmp/*.deb
+RUN cd /tmp && wget https://github.com/PurpleI2P/i2pd/releases/download/2.10.0/i2pd_2.10.0-1jessie1_amd64.deb && \
+    dpkg -i /tmp/i2pd_2.10.0-1jessie1_amd64.deb && \
+    rm /tmp/*.deb
 
 # Make the i2pd user availiable 
 RUN usermod -s /bin/bash i2pd 
