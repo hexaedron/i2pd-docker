@@ -17,8 +17,9 @@ RUN apt-get update -y  && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*  /tmp/*
 
-# Fetch the latest pakckage and install it
-RUN cd /tmp && wget https://github.com/PurpleI2P/i2pd/releases/download/2.10.0/i2pd_2.10.0-1jessie1_amd64.deb && \
+# Fetch the latest package and install it
+RUN cd /tmp && \
+    wget https://github.com/PurpleI2P/i2pd/releases/download/2.10.0/i2pd_2.10.0-1jessie1_amd64.deb && \
     dpkg -i /tmp/i2pd_2.10.0-1jessie1_amd64.deb && \
     rm /tmp/*.deb
 
