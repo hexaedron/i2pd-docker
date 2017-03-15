@@ -40,7 +40,7 @@ To view logs of the i2pd daemon, type
 ```
 $ docker logs -t hexaedron/i2pd
 ```
-======================
+=======================
 Comments and feature requests are always welcome.
 
 
