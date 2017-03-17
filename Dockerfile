@@ -14,14 +14,13 @@ RUN apt-get update -y  && \
 			libboost-program-options1.55.0 	\
 			libboost-system1.55.0 		\
 			libminiupnpc10               && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*  /tmp/*
 
 # Fetch the latest package and install it
-RUN cd /tmp && \
+    cd /tmp && \
     wget https://github.com/PurpleI2P/i2pd/releases/download/2.12.0/i2pd_2.12.0-1jessie1_amd64.deb && \
     dpkg -i /tmp/i2pd_2.12.0-1jessie1_amd64.deb && \
-    rm /tmp/*.deb
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*  /tmp/*
 
 # Make the i2pd user availiable 
 RUN usermod -s /bin/bash i2pd 
