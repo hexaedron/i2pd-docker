@@ -17,13 +17,13 @@ RUN apt-get update -y  && \
 
 # Fetch the latest package and install it
     cd /tmp && \
-    wget https://github.com/PurpleI2P/i2pd/releases/download/2.12.0/i2pd_2.12.0-1jessie1_amd64.deb && \
-    dpkg -i /tmp/i2pd_2.12.0-1jessie1_amd64.deb && \
+    wget https://github.com/PurpleI2P/i2pd/releases/download/2.13.0/i2pd_2.13.0-1jessie1_amd64.deb && \
+    dpkg -i /tmp/i2pd_2.13.0-1jessie1_amd64.deb && \
     apt-get clean && \
-    rm -rf /var/lib/apt/lists/*  /tmp/*
+    rm -rf /var/lib/apt/lists/*  /tmp/* && \
 
 # Make the i2pd user availiable 
-RUN usermod -s /bin/bash i2pd 
+    usermod -s /bin/bash i2pd 
 
 # Copy configs into the container
 COPY i2pd.conf /etc/i2pd/i2pd.conf
